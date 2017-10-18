@@ -6,8 +6,9 @@ var bio = {
 		"github": "caltamiran",
 		"twitter": "@ChrisAltamiran",
 		"location": "Visalia, California, USA"
+		
 	},
-	"picture": "images/Coach.png",
+	"biopic": "images/Coach.png",
 	"welcomeMessage": "I'm currently working as a ATO Development Coach for AT&T in Visalia, California. I enjoy helping others "+
 			  "and developing leaders of the business. I develop Field Managers that are responsible for the technicians,",
 	"skills": ["Python", "Java", "HTML"]
@@ -17,8 +18,8 @@ var work = {
 		{
 			"employer": "AT&T",
 			"title": "ATO Development Coach",
-			"location": "Visalia, California USA",
-			"datesWorked": "February 2013 - Present",
+			"location": "Visalia, California, USA",
+			"dates": "February 2013 - in progress",
 			"description": "Coach and develop Field Managers into succesfull leaders of the business."+
 				"Track and chart trends with company metrics and targets set for the day, month and year. "+
 				"Quickly anaylizing data and providing feedback to the Field Managers to drive individual teams,"+
@@ -29,8 +30,8 @@ var work = {
 		{
 			"employer": "AT&T",
 			"title": "Network Field Manager",
-			"location": "Visalia, California USA",
-			"datesWorked": "November 2011 - February 2013",
+			"location": "Visalia, California, USA",
+			"dates": "November 2011 - February 2013",
 			"description": "I was hired to coach and develop Premise Technicians, that installs video and internet services. "+
 				"Motivated direct reports to achieve business goals year after year. Removing roadblocks and providing a positive environment "+
 				"for others to learn. Collaborated with other business units in the area, in order for both units to achieve goals. "
@@ -39,8 +40,8 @@ var work = {
 		{
 			"employer": "AT&T",
 			"title": "Splicing Technician",
-			"location": "Sacramento, California USA",
-			"datesWorked": "August 1998 - November 2011",
+			"location": "Sacramento, California, USA",
+			"dates": "August 1998 - November 2011",
 			"description": "My primary responsibilities involve restoral of customer phone, data or cellular lines. " +
 				"Knowledge of POTS, DSL, ADSL, Centax, HDSL, T1, and VDSL services offered by company. " +
 				"Expert with trouble shootig with industry tools, lead trainer for all new hires. " +
@@ -53,16 +54,19 @@ var work = {
 var education = {
 	"schools": [
 		{ "name": "Hanford High School",
-			"datesAttended": "1993 - 1997",
+			"dates": "1993 - 1997",
 			"location": "Hanford, California, USA",
 			"degree": "Diploma",
+		 	"major": "Agriculture",
+		 	"minor": "General Education"
 					}
 	],
 	"onlineCourses": [
 		{ "school": "Udacity",
 			"title": "Intorduction into Programming",
 			"completed": "October 2017",
-			"url": "https://www.udacity.com/"
+			"url": "https://www.udacity.com/",
+		 	"location": "Mountain View, California, USA"
 		},
 
 		]
@@ -99,7 +103,7 @@ var projects = {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.picture);
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
 var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 
 var formattedContactInfo = [];
@@ -114,6 +118,7 @@ $("#header").prepend(formattedName);
 $("#header").append(formattedBioPic);
 $("#header").append(formattedWelcomeMsg);
 
+bio.display=function(){
 if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
@@ -126,9 +131,10 @@ for( i in formattedContactInfo) {
 	$("#topContacts").append(formattedContactInfo[i]);
 	$("#footerContacts").append(formattedContactInfo[i]);
 }
-
-
-function displayWork() {
+}
+bio.display();
+work.display=function(){
+//function displayWork() {
 
 	if(work.jobs.length > 0) {
 
@@ -138,7 +144,7 @@ function displayWork() {
 			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
 			var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
 			var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
-			var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[i].datesWorked);
+			var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[i].dates);
 			var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
 
 			var formattedEmployerWorkTitle = formattedEmployer + formattedWorkTitle;
@@ -153,7 +159,7 @@ function displayWork() {
 
 }
 
-displayWork();
+work.display();
 
 
 projects.display = function() {
@@ -188,7 +194,7 @@ education.display = function() {
 
 			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
 			var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
-			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].datesAttended);
+			var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
 			var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[i].location);
 			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[i].major);
 			var formattedSchoolMinor = HTMLschoolMinor.replace("%data%", education.schools[i].minor);
@@ -311,4 +317,4 @@ $(function () {
 });
 
 
-$("#mapDiv").append(googleMap);
+//$("#mapDiv").append(googleMap);
