@@ -186,7 +186,7 @@ function initializeMap() {
     map.fitBounds(bounds);
     // center the map
     map.setCenter(bounds.getCenter());
-  }
+  };
 
   /*
   callback(results, status) makes sure the search returned results for a location.
@@ -211,12 +211,12 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
     
     // Iterates through the array of locations, creates a search object for each location
-    for (place in locations) {
+    for (var place in locations) {
 
       // the search request object
       var request = {
         query: locations[place]
-      }
+      };
 
       // Actually searches the Google Maps API for location data and runs the callback 
       // function with the search results after each search.
@@ -234,7 +234,7 @@ function initializeMap() {
   // the locations array
   pinPoster(locations);
   
-};
+}
 
 /*
 Uncomment all the code below when you're ready to implement a Google Map!
