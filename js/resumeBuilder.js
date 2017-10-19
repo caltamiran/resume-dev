@@ -5,7 +5,7 @@ var bio = {
 		"email": "ca2759@att.com",
 		"github": "caltamiran",
 		"twitter": "@ChrisAltamiran",
-		"location": "Visalia, California, USA"
+		"location": "Visalia, California"
 		
 	},
 	"biopic": "images/Coach.png",
@@ -18,7 +18,7 @@ var work = {
 		{
 			"employer": "AT&T",
 			"title": "ATO Development Coach",
-			"location": "Visalia, California, USA",
+			"location": "Visalia, California",
 			"dates": "February 2013 - in progress",
 			"description": "Coach and develop Field Managers into succesfull leaders of the business."+
 				"Track and chart trends with company metrics and targets set for the day, month and year. "+
@@ -30,7 +30,7 @@ var work = {
 		{
 			"employer": "AT&T",
 			"title": "Network Field Manager",
-			"location": "Visalia, California, USA",
+			"location": "Visalia, California",
 			"dates": "November 2011 - February 2013",
 			"description": "I was hired to coach and develop Premise Technicians, that installs video and internet services. "+
 				"Motivated direct reports to achieve business goals year after year. Removing roadblocks and providing a positive environment "+
@@ -40,7 +40,7 @@ var work = {
 		{
 			"employer": "AT&T",
 			"title": "Splicing Technician",
-			"location": "Sacramento, California, USA",
+			"location": "Sacramento, California",
 			"dates": "August 1998 - November 2011",
 			"description": "My primary responsibilities involve restoral of customer phone, data or cellular lines. " +
 				"Knowledge of POTS, DSL, ADSL, Centax, HDSL, T1, and VDSL services offered by company. " +
@@ -55,7 +55,7 @@ var education = {
 	"schools": [
 		{ "name": "Hanford High School",
 			"dates": "1993 - 1997",
-			"location": "Hanford, California, USA",
+			"location": "Hanford, California",
 			"degree": "Diploma",
 		 	"major": "Agriculture",
 		 	"minor": "General Education"
@@ -66,7 +66,7 @@ var education = {
 			"title": "Intorduction into Programming",
 			"completed": "October 2017",
 			"url": "https://www.udacity.com/",
-		 	"location": "Mountain View, California, USA"
+		 	//"location": "Mountain View, California"
 		},
 
 		]
@@ -317,4 +317,4 @@ $(function () {
 });
 
 
-//$("#mapDiv").append(googleMap);
+$("#mapDiv").append(googleMap);
