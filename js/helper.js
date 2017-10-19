@@ -186,7 +186,7 @@ function initializeMap() {
     map.fitBounds(bounds);
     // center the map
     map.setCenter(bounds.getCenter());
-  };
+  }
 
   /*
   callback(results, status) makes sure the search returned results for a location.
@@ -195,7 +195,7 @@ function initializeMap() {
 
   function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
-      createMapMarker(results[0])
+      createMapMarker(results[0]);
     }
   }
 

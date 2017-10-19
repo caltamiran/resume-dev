@@ -127,7 +127,7 @@ if(bio.skills.length > 0) {
 	}
 }
 
-for(var i in formattedContactInfo) {
+for( i in formattedContactInfo) {
 	$("#topContacts").append(formattedContactInfo[i]);
 	$("#footerContacts").append(formattedContactInfo[i]);
 }
@@ -208,7 +208,7 @@ education.display = function() {
 
 		if(education.onlineCourses.length > 0) {
 			$("#education").append(HTMLonlineClasses);
-			for(var i in education.onlineCourses) {
+			for( i in education.onlineCourses) {
 				$("#education").append(HTMLschoolStart);
 				var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
 				var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
