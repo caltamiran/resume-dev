@@ -127,9 +127,9 @@ if(bio.skills.length > 0) {
 	}
 }
 
-for( i in formattedContactInfo) {
-	$("#topContacts").append(formattedContactInfo[i]);
-	$("#footerContacts").append(formattedContactInfo[i]);
+for(var a in formattedContactInfo) {
+	$("#topContacts").append(formattedContactInfo[a]);
+	$("#footerContacts").append(formattedContactInfo[a]);
 }
 };
 bio.display();
